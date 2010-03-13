@@ -1,21 +1,66 @@
 <html>
-
 <head>
+
+<title>slide.show()</title>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script>
+
+<style>
+body {
+font-family: corbel,'lucida grande',helvetica,sans-serif;
+font-size:20px;
+line-height:1.5;
+background-color:grey;
+}
+
+#head {
+background-color:yellow;
+)
+
+.slide {
+background-color:green;
+}
+
+.active {
+}
+</style>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+  jQuery('.slide').hide();
+
+  jQuery('#head').click(function() {
+    // if slideshow starts
+    if (jQuery('.active').length == 0) {
+      jQuery('.slide:first').addClass('active').fadeIn('fast');
+    }
+    // if last slide reached
+    else if (jQuery('.slide:last').hasClass('active')) {
+      jQuery('.active').fadeOut('fast', function() {
+        jQuery('.active').removeClass('active');
+        jQuery('.slide:first').addClass('active').fadeIn('fast');
+      });
+    }
+    // before last slide
+    else {
+      jQuery('.active').fadeOut('fast', function() {
+        jQuery('.active').removeClass('active').next().addClass('active').fadeIn('fast');
+      });
+    }
+  });
+});
+</script>
 
 
 </head>
-
-
 <body>
 
-
-
 <div id="head">
-
+<pre>slide.show()</pre>
 </div>
 
 
-<div class="home slide">
+<div class="slide">
 
 <h1>Slide Show Title</h1>
 <h2>Subtitle</h2>
@@ -36,11 +81,22 @@
 </div>
 
 
-<div id="foot">
+<div class="slide">
+
+<h3>Slide Title</h3>
+
+<ul>
+<li>fourth</li>
+<li>fivth</li>
+<li>sixth</li>
+</ul>
 
 </div>
 
 
-</body>
+<div id="foot">
 
+</div>
+
+</body>
 </html>
