@@ -14,11 +14,20 @@ background-color:grey;
 }
 
 #head {
-background-color:yellow;
-)
+background-color:black;
+color:white;
+}
+
+#foot {
+background-color:black;
+color:white;
+font-size:0.6em;
+position:absolute;
+bottom:0.5em;
+width:98%;
+}
 
 .slide {
-background-color:green;
 }
 
 .active {
@@ -59,43 +68,75 @@ jQuery(document).ready(function() {
 <pre>slide.show()</pre>
 </div>
 
-
+<!-- first example slide --->
 <div class="slide">
 
-<h1>Slide Show Title</h1>
-<h2>Subtitle</h2>
+<h1><pre>slide.show()</pre></h1>
+<h2>Tutorial</h2>
 
 </div>
 
-
+<!-- second example slide --->
 <div class="slide">
 
-<h3>Slide Title</h3>
+<h3>FAQ</h3>
 
 <ul>
-<li>first</li>
-<li>second</li>
-<li>third</li>
+<li>
+What's the goal of slide.show()?
+<ul><li>Platform independent slideshows.</li></ul>
+</li>
+<li>
+PDFs provides platform independent slideshows for years. What's the advantage?
+<ul><li>Due to technical reasons PDFs doesn't offer animations. Thanks to JavaScript HTML does.</li></ul>
+</li>
+<li>
+<ll>
+Which know how is required?
+<ul><li>slide.show() uses XHTML, CSS, JavaScript and jQuery.</li></ul>
+</li>
 </ul>
-
 </div>
 
-
+<!-- third example slide -->
 <div class="slide">
 
-<h3>Slide Title</h3>
+<h3>Slide structure</h3>
 
-<ul>
-<li>fourth</li>
-<li>fivth</li>
-<li>sixth</li>
-</ul>
+<pre>
+&lt;!-- Slides are within a div with class "slide" --&gt;
+<strong>&lt;div class="slide"&gt;</strong>
+&lt;!-- HTML Tags can be used in slides. For example for bullet points --&gt;
+<strong>&lt;ul&gt;
+&lt;li&gt;One bullet points&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</strong>
+</pre>
 
 </div>
 
+<!-- fourth example slide -->
+<div class="slide">
+
+<h3></h3>
+
+<p>Insert images (&lt;img/&gt;) and <a href="http://code.google.com/intl/de-DE/apis/chart/docs/user_submitted_gallery.html" target="_blank">hyperlinks</a> (&lt;a/&gt;) as used.</p>
+
+<img src="http://chart.apis.google.com/chart?chco=CA3D05,87CEEB&chd=e:AAB4DhEzFxGnHrJRLhOZRmUpXCYZYpYAXCWfXCZIczhmmtrKuE,..-H8e7M6O5Y4U2u0exmuZrWo9nmnWn.o9pgo9m3jMeZZSU1R7&chdl=My+Website.com|Competition.com&chf=bg,s,1F1D1D|c,lg,0,363433,1.0,2E2B2A,0.0&chg=25.0,25.0,3,2&chls=3|3&chm=r,FF00004C,0,0.40,0.60|R,0080004C,0,0.70,0.90|d,CA3D05,0,-1,12,0|d,FFFFFF,0,-1,8,0|d,87CEEB,1,-1,12,0|d,FFFFFF,1,-1,8,0&chs=450x300&cht=lc&chts=FFFFFF,14&chtt=Web+Traffic|(In+billions+of+hits)&chxl=0:||25|50|75|100|1:|Hits|2:|Nov|Dec|Jan|Feb|Mar|3:|2007|2007|2008|2008|2008|4:|Month&chxp=1,50.0|4,50.0&chxr=1,0.0,100.0&chxs=0,FFFFFF,12,0|1,FFFFFF,12,0|2,FFFFFF,12,0|3,FFFFFF,12,0|4,FFFFFF,14,0&chxt=y,y,x,x,x&chma=55,120,0,0"/>
+
+</div>
+
+<!-- fifth example slide -->
+<div class="slide">
+
+<h3>Now it's your turn!</h3>
+
+<p>Create slideshows in web developer style. Have fun.</p>
+
+</div>
 
 <div id="foot">
-
+slide.show() - Platform independent slideshows in your Browser.
 </div>
 
 </body>
