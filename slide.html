@@ -7,24 +7,41 @@
 
 <style>
 body {
-font-family: corbel,'lucida grande',helvetica,sans-serif;
-font-size:20px;
-line-height:1.5;
-background-color:grey;
+  font-family: corbel,'lucida grande',helvetica,sans-serif;
+  font-size:20px;
+  line-height:1.5;
+  background-color:grey;
 }
 
 #head {
-background-color:black;
-color:white;
+  background-color:black;
+  color:white;
 }
 
 #foot {
-background-color:black;
-color:white;
-font-size:0.6em;
-position:absolute;
-bottom:0.5em;
-width:98%;
+  background-color:black;
+  color:white;
+  font-size:0.6em;
+  position:absolute;
+  bottom:0.5em;
+  width:98%;
+}
+
+#menu {
+  position:absolute;
+  right:1em;
+  margin:0;
+  display:inline;
+  list-style:none;
+}
+
+#menu li {
+  display:inline;
+  width:auto;
+}
+
+#menu a {
+  color:inherit;
 }
 
 .slide {
@@ -36,9 +53,11 @@ width:98%;
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
+  // on start, hide all slides
   jQuery('.slide').hide();
 
-  jQuery('#head').click(function() {
+  // show next slide when user clicks on #head
+  jQuery('#next').click(function() {
     // if slideshow starts
     if (jQuery('.active').length == 0) {
       jQuery('.slide:first').addClass('active').fadeIn('fast');
@@ -65,14 +84,22 @@ jQuery(document).ready(function() {
 <body>
 
 <div id="head">
-<pre>slide.show()</pre>
+slide.show()
+
+<ul id="menu">
+  <li><a id="prev" href="#">previous</a></li>
+  <li><a id="next" href="#">next</a></li>
+  <li><a id="add" href="#">add</a></li>
+  <li><a id="edit" href="#">edit</a></li>
+  <li><a id="remove" href="#">remove</a></li>
+</ul>
 </div>
 
 <!-- first example slide --->
 <div class="slide">
 
 <h1><pre>slide.show()</pre></h1>
-<h2>Tutorial</h2>
+<h2>Getting started</h2>
 
 </div>
 
