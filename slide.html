@@ -62,8 +62,9 @@ body {
 
 <script type="text/javascript">
 jQuery(document).ready(function() {
-  // on start, hide all slides
-  jQuery('.slide').hide();
+  // activate first slide and hide the following on start
+  jQuery('.slide:first').addClass('active');
+  jQuery('.slide').nextAll().hide();
 
   // show next slide when user clicks on #head
   jQuery('#next').click(function() {
