@@ -85,6 +85,13 @@ jQuery(document).ready(function() {
       });
     }
   });
+
+  // show edit dialog
+  jQuery('#edit').click(function() {
+    jQuery('#slide-code').val(jQuery('.active').html().trim());
+    jQuery('.active').addClass('disable').fadeOut('fast');
+    jQuery('#dialog-edit').addClass('enable').fadeIn('fast');
+  });
 });
 </script>
 
@@ -102,6 +109,15 @@ slide.show()
   <li><a id="edit" href="#">edit</a></li>
   <li><a id="remove" href="#">remove</a></li>
 </ul>
+</div>
+
+<!-- edit dialog for slides -->
+<div class="dialog" id="dialog-edit">
+  <form>
+    <textarea id="slide-code"></textarea><br/>
+    <input type="submit"/>
+    <input type="reset"/>
+  </form>
 </div>
 
 <!-- first example slide --->
