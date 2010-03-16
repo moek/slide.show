@@ -63,8 +63,8 @@ body {
 <script type="text/javascript">
 jQuery(document).ready(function() {
   // activate first slide and hide the following on start
-  jQuery('.slide:first').addClass('active');
-  jQuery('.slide').nextAll().hide();
+  jQuery('.slide').hide();
+  jQuery('.slide:first').addClass('active').fadeIn();
 
   // show previous slide when user clicks on #head
   jQuery('#prev').click(function() {
