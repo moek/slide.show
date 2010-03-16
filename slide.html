@@ -109,6 +109,17 @@ jQuery(document).ready(function() {
     jQuery('#dialog-edit').removeClass('enable').fadeOut('fast');
     jQuery('.active').fadeIn('fast');
   });
+
+  // button - remove
+  jQuery('#remove').click(function() {
+    if (jQuery('.slide:last').hasClass('active')) {
+      jQuery('.active').fadeOut('fast').remove();
+      jQuery('.slide:last').addClass('active').fadeIn('fast');
+    }
+    else {
+      jQuery('.active').fadeOut('fast').next().addClass('active').fadeIn('fast').prev().remove();
+    }
+  });
 });
 </script>
 
