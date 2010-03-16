@@ -66,6 +66,27 @@ jQuery(document).ready(function() {
   jQuery('.slide:first').addClass('active');
   jQuery('.slide').nextAll().hide();
 
+  // show previous slide when user clicks on #head
+  jQuery('#prev').click(function() {
+    // if slideshow starts
+    if (jQuery('.active').length == 0) {
+      jQuery('.slide:last').addClass('active').fadeIn('fast');
+    }
+    // if first slide reached
+    else if (jQuery('.slide:first').hasClass('active')) {
+      jQuery('.active').fadeOut('fast', function() {
+        jQuery('.active').removeClass('active');
+        jQuery('.slide:last').addClass('active').fadeIn('fast');
+      });
+    }
+    // before first slide
+    else {
+      jQuery('.active').fadeOut('fast', function() {
+        jQuery('.active').removeClass('active').prev().addClass('active').fadeIn('fast');
+      });
+    }
+  });
+
   // show next slide when user clicks on #head
   jQuery('#next').click(function() {
     // if slideshow starts
