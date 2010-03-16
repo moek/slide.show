@@ -86,11 +86,23 @@ jQuery(document).ready(function() {
     }
   });
 
-  // show edit dialog
+  // dialog - edit - show
   jQuery('#edit').click(function() {
     jQuery('#slide-code').val(jQuery('.active').html().trim());
     jQuery('.active').addClass('disable').fadeOut('fast');
     jQuery('#dialog-edit').addClass('enable').fadeIn('fast');
+  });
+
+  // dialog - edit - submit button
+  jQuery('#dialog-edit form').submit(function() {
+    jQuery('#dialog-edit').removeClass('enable').fadeOut('fast');
+    jQuery('.active').html(jQuery('#slide-code').val()).fadeIn('fast');
+  });
+
+  // dialog - edit - cancel button
+  jQuery('#dialog-edit input[type="reset"]').click(function() {
+    jQuery('#dialog-edit').removeClass('enable').fadeOut('fast');
+    jQuery('.active').fadeIn('fast');
   });
 });
 </script>
