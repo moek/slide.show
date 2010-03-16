@@ -85,6 +85,11 @@ jQuery(document).ready(function() {
       });
     }
   });
+
+  // add empty slide
+  jQuery('#add').click(function() {
+    jQuery('.active').fadeOut('fast').removeClass('active').after('<div class="slide"></div>').addClass('active').fadeIn('fast');
+  });
 });
 </script>
 
